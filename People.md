@@ -4,9 +4,13 @@
 
 # Leo
 
+Hei!
+
+Pääsin nyt opencomp-ryhmään. Keskityin noiden viitteiden lukemiseen ja aloitin tutkimussuunnitelman kirjoittamisen.
+En vielä lähtenyt pyörittelemään tuota HintikkaXODataa, lyödäänkö juuri tämä data lukkoon?
 
 - oletko lomalla jossain vaiheessa kesää?
-- onko väliä millä R versiolla lähden tekemään?
+- onko väliä millä R versiolla lähden tekemään? Notame on R > 3.5.0 
 
 
 # Annika

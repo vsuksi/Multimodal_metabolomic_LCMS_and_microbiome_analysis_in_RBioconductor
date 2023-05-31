@@ -2,6 +2,8 @@
 
 **The braindump is a repository for the fleeting thoughts that further the project at hand but are better picked up at a later stage.**
 
+Does Notame work in R 4.3.0 if installed via GitHub?
+
 If using the Hintikka XO-data, multi-modal functionalities of Notame are of more interest. What are these?
 
 How well do I need to understand the Notame workflow? Perhaps I need to explain the steps and why they are done, at least the ones used in my analysis?
