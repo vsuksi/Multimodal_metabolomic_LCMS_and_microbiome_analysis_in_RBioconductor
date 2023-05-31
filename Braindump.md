@@ -2,6 +2,8 @@
 
 **The braindump is a repository for the fleeting thoughts that further the project at hand but are better picked up at a later stage.**
 
+What is the relevance of TreeSummarizedExperiment and MultiAssayExperiment for the project? Does TreeSummarizedExperiment allow for multiple assays? Yes, since SingleCellExperiment does.
+
 Does Notame work in R 4.3.0 if installed via GitHub?
 
 If using the Hintikka XO-data, multi-modal functionalities of Notame are of more interest. What are these?
@@ -16,6 +18,72 @@ Hintikka XO-data
 Prioriteettilista Notame-työkaluista
 
 Taxonomic microbiome
+
+###############################################################↓
+# Notes from Software for the integration of multi-omics experiments in Bioconductor
+
+SummarizedExperiment is sufficient only to track single assays and metadata. MultiAssayExperiment was developed to address these shortcomings.
+
+MultiAssayExperiment has three main components:
+1. colData, a primary dataset containing patient or cell line-level characteristics (metadata)
+2. ExperimentList, a list of results from complementary experiments
+3. SampleMap, which relates ExperimentList and ColData
+
+Key methods for manipulating a MultiAssayExperiment include:
+1. A constructor function and validity check functions that simplify creation of a MultiAssayExperiment
+2. Subsetting functions allowing data selection by identifiers or ranges, metadata or specific assays
+3. Accessor functions that are simultaneously setters and getters
+
+###############################################################↑
+
+###############################################################↓
+# Notes from "TreeSummarizedExperiment: a S4 class for data with hierarchical structure"
+
+TreeSummarizedExperiment is an extension of the SingleCellExperiment class, derived from SummarizedExperiment, for storing the hierarchical structure of data together with the biological profile data. Functions for  manipulating data at different resolutions included. For example, microbial taxa are organized as a tree according to their genomic sequence. Thus, TreeSummarizedExperiment can be seen as bridging the functionalities of the phyloseq R package with the SingleCellExperiment container. TreeSummarizedExperiment is flexible in combination with R packages derived from SummarizedExperiment and the phyloseq package.
+
+Compared to SingleCellExperiment, TreeSummarizedExperiment has five additional slots:
+- rowTree: the hierarchical structure on the rows of the assays, for example hierarchy of genes or microbial taxa
+- rowLinks: the link information between rows of the assays and the rowTree
+- colTree: the hierarchical structure on the columns of the assays, for example hierarchy of cells or samples
+- colLinks: the link information between columns of the assays and the colTree
+- referenceSeq: the sequence information for rows of the assays
+
+Note that the rowTree and colTree slots require the tree to be an object of the phylo class from the phyloseq package. Other tree formats can often be converted to a phylo object using the treeio package, for example.
+
+Functions can be broadly divided into those that operate on the TreeSummarizedExperiment object or on the tree objects.
+
+In construction of the TreeSummarizedExperiment object, tree data takes precedence when  provided link information (node labels) between the assay data and the tree data, so columns and rows with labels not present among the node labels of the tree are removed.
+
+The link data objects are of the LinkDataFrame class and has five columns:
+- nodeLab: the labels on the nodes of the tree
+- nodeLab_alias: the alias labels of nodes on the tree
+- nodeNum: the numbers of nodes on the tree
+- isLeaf: whether the node is a leaf node
+- whichTree: which tree the row/col is linked to
+
+Accessor functions, like colTree(), work as setters and getters.
+
+Subsetting can be done as usual or by nodes using subsetbyNode().
+
+A tree can be replaced using changeTree().
+
+Aggregation functionality with aggTSE() allows analysis of data at multiple resolutions (levels) of a tree. The colLinks or/and rowLinks are updated automatically.
+
+There are several functions for manipulating the phylo object, including conversion of node name to number, finding descendants and ancestors at the node level and testing whether a node is a leaf node.
+
+Custom functions can be written for TreeSummarizedExperiment objects that combine functions working on the phylo class and accessor functions.
+
+###############################################################↑
+
+
+
+
+
+
+
+
+
+
 
 ###############################################################↓
 # Notes from Notame paper

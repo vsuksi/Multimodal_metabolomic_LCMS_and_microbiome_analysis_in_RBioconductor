@@ -4,10 +4,10 @@
 
 **Enter tasks in a rough order of importance!**
 
-Read TreeSummarizedExperiment: a S4 class for data with hierarchical structure
+Read "Software for the integration of multi-omics experiments in
+Bioconductor"
 
-Read Software for the integration of multi-omics experiments in
-Bioconductor
+Tinker with TreeSummarizedExperiment with help from "TreeSummarizedExperiment: a S4 class for data with hierarchical structure".
 
 Read references to containers in Orchestrating Microbiome Analysis
 
