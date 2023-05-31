@@ -4,19 +4,8 @@
 
 # Leo
 
-Hei!
 
-En pääsekään opencomp-ryhmään Slackissa, eli en pääse käsiksi lähettämääsi materiaaliin. Lisäisitkö minut uudelleen? Löysin tosin jo mainitsemasi kirjan ja Notame-dokumentaation joten pääsin alkuun.
-
-Tein muistiinpanoja kirjasta ja Notamesta joten kokonaiskuva alkaa selkeytyä. Muodostin käsityksen Notamen työkaluista ja niiden merkityksestä.
-
-Voisiko working title olla "Workflow for multi-modal metabolomic LC/MS and microbiome analysis in the R/Bioconductor ecosystem". Voit halutessasi seurata projektin edistymistä samannimisestä GitHub-reposta.
-
-Muistuksena; projektin edistämiseksi mainitsit Notame-työkalujen prioriteettilistan ja data containerin valitsemisen. Laitoin graduyhteistyösopimuksen ÅA-ohjaajan allekirjoitettavaksi. Sen suhteen ei ole kiirettä, joten ohjausjärjestelyn suhteen ei ole hätää.
-
-Kiitti,
-Vilhelm
-
+- oletko lomalla jossain vaiheessa kesää?
 - onko väliä millä R versiolla lähden tekemään?
 
 

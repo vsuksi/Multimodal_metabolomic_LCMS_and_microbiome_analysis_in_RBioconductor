@@ -2,9 +2,11 @@
 
 **The braindump is a repository for the fleeting thoughts that further the project at hand but are better picked up at a later stage.**
 
+If using the Hintikka XO-data, multi-modal functionalities of Notame are of more interest. What are these?
+
 How well do I need to understand the Notame workflow? Perhaps I need to explain the steps and why they are done, at least the ones used in my analysis?
 Which steps could be relevant?
-Time series? 
+Time series?
 Visualizations, yes.
 
 Kati Hanhineva
@@ -31,7 +33,20 @@ The Bioconductor microbiome data science framework consists of:
 - R packages that provide dedicated methods for analysing such data
 - community of users and developers
 
-In the ecosystem, the following tasks can be performed:
+MultiAssayExperiment binds data structures such as TreeSummarizedExperiment and SummarizedExperiment together so they share metadata. This simplifies data manipulation tasks like subsetting. Connections between samples across differennt experiments are defined through a sampleMap.
+
+Storing multiple data tables in microbiome analysis is preferrably done as follows:
+- Assays are used within the data container for data transformations
+- the altExp slot in TreeSE if for alternative versions of the data with the same number of samples, arising from differing taxonomic agglomeration or alternative profiling technologies, for example
+- MultiAssayExperiment for multo-omic experiments, allowing for differing numbers of samples and features
+
+Hintikka XO-data was used to study whether prebiotics would reduce the negative impact of a high-fat diet in mice. This encompassed three modalities: microbial abundance data, metabolite concentrations and data about different biomarkers.
+
+What steps were performed for the multi-assay analysis?
+- Cross-correlation analysis, for elucidating the relationship between individual species of bacteria and metabolite concentrations. Heatmap visualization.
+- Multi-omics factor analysis, which could be seen as a generalization of PCA, for unsupervised multi-omics integration to latent space. The factor loadings (variance explained per factor and assay) is visualized with bar plots.
+
+In the framework, the following tasks can be performed:
 - Data manipulation including tidying, subsetting, splitting, adding, modifying and merging
 - Exploration and quality control, including abundance, prevalence and quality control
 - Taxonomic-focused tasks, including assignment and access of taxonomic information, agglomeration by taxonomic rank, data transformation, and picking specific elements for analysis
