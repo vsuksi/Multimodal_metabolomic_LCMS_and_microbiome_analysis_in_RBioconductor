@@ -2,11 +2,13 @@
 
 **The braindump is a repository for the fleeting thoughts that further the project at hand but are better picked up at a later stage.**
 
+What is experimenthub?
+
 What is the relevance of TreeSummarizedExperiment and MultiAssayExperiment for the project? Does TreeSummarizedExperiment allow for multiple assays? Yes, since SingleCellExperiment does.
 
 Does Notame work in R 4.3.0 if installed via GitHub?
 
-If using the Hintikka XO-data, multi-modal functionalities of Notame are of more interest. What are these?
+If using the Hintikka XO-data, multi-modal functionalities of Notame are of more interest. What are some examples of these?
 
 How well do I need to understand the Notame workflow? Perhaps I need to explain the steps and why they are done, at least the ones used in my analysis?
 Which steps could be relevant?
@@ -16,8 +18,6 @@ Visualizations, yes.
 Kati Hanhineva
 Hintikka XO-data
 Prioriteettilista Notame-työkaluista
-
-Taxonomic microbiome
 
 ###############################################################↓
 # Notes from Software for the integration of multi-omics experiments in Bioconductor
@@ -74,16 +74,6 @@ There are several functions for manipulating the phylo object, including convers
 Custom functions can be written for TreeSummarizedExperiment objects that combine functions working on the phylo class and accessor functions.
 
 ###############################################################↑
-
-
-
-
-
-
-
-
-
-
 
 ###############################################################↓
 # Notes from Notame paper
