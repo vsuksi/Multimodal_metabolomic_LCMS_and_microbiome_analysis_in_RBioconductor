@@ -5,7 +5,7 @@
 **Concepts can take a while to crystallize in a seamless formulation; meanwhile, try to formulate the matter as it often means progress.**
 
 
-
+**
 
 **How is redundant representation of the same metabolite due to unpredictable adduct behavior and neutral loss formation avoided**
 Features are clustered and combined anew based on correlated feature pairs using a specified retention time window and correlation threshold. After this, the dataset is ready for analysis.
