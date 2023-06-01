@@ -4,6 +4,12 @@
 
 **Concepts can take a while to crystallize in a seamless formulation; meanwhile, try to formulate the matter as it often means progress.**
 
+**What is biclustering?**
+
+
+**What is experimenthub?**
+
+
 
 **What is an operational taxonomic unit (OTU)?**
 An OTU is an operational definition of groups in a dataset based on some similarity threshold. In the context of microbiomics, OTU's are introduced as subgroups to taxonomic class as follows: Kingdom - Phylum - Class - OTU.

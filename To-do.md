@@ -4,8 +4,6 @@
 
 **Enter tasks in a rough order of importance!**
 
-Read references to containers in Orchestrating Microbiome Analysis, do notes on the packages that don't have an associated publication.
-
 Tinker with TreeSummarizedExperiment with help from "TreeSummarizedExperiment: a S4 class for data with hierarchical structure".
 
 Tinker with MultiAssayExperiment with help from "Software for the integration of multi-omics experiments in Bioconductor".

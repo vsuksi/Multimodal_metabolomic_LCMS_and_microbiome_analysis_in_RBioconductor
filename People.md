@@ -4,13 +4,12 @@
 
 # Leo
 
-Hei!
 
-Pääsin nyt opencomp-ryhmään. Keskityin noiden viitteiden lukemiseen ja aloitin tutkimussuunnitelman kirjoittamisen.
-En vielä lähtenyt pyörittelemään tuota HintikkaXODataa, lyödäänkö juuri tämä data lukkoon?
-
+- muodostanut käsityksen data containereista miten ne suhtautuvat toisiinsa
 - oletko lomalla jossain vaiheessa kesää?
-- onko väliä millä R versiolla lähden tekemään? Notame on R > 3.5.0 
+- prioriteettilista työkaluista
+- containeri
+- onko väliä millä R versiolla lähden tekemään? Notame on R > 3.5.0
 
 
 # Annika
