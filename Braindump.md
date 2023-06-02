@@ -2,6 +2,8 @@
 
 **The braindump is a repository for the fleeting thoughts that further the project at hand but are better picked up at a later stage.**
 
+Skip the LC/MS in the title, as Hintikka metabolite data is by NMR?
+
 No mention of LC/MS in Hintikka?
 
 How to filter Bioconductor metabolomics packages of interest?

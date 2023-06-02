@@ -6,8 +6,10 @@
 
 Review your notes
 
-Tinker with TreeSummarizedExperiment with help from "TreeSummarizedExperiment: a S4 class for data with hierarchical structure".
+Tinker with Orchestrating Microbiome Analyis, especially:
+- Multi-omics factor analysis
+- 
 
-Tinker with MultiAssayExperiment with help from "Software for the integration of multi-omics experiments in Bioconductor".
+Tinker with TreeSummarizedExperiment with help from "TreeSummarizedExperiment: a S4 class for data with hierarchical structure".
 
 Browse other Bioconductor metabolomics packages

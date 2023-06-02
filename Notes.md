@@ -4,7 +4,7 @@
 
 # Notes on "Orchestrating single-cell analysis with Bioconductor" and SingleCellExperiment documentation
 
-Compared to bulk assays, single-cell data has to be specially handled to achieve biological insight in that:
+Compared to bulk assays, single-cell data has to be specially handled to achieve biological insight since:
 1. the number of observations (single cells) is very large
 2. the increased sparsity of data due to biological fluctuations in the measurements
 
@@ -21,7 +21,7 @@ Functionalities include:
 4. Storing row (feature) or column (sample) pairings
 5. Adding additional metadata fields
 
-In other words, the SingleCellExperiment container can do most of what MultiAssayExperiment does, but without introducting an additional layer of indirection in that a MultiAssayExperiment typically functions by binding together instances of, for example, TreeSummarizedExperiment and SummarizedExperiment with shared metadata.
+The SingleCellExperiment container can do most of what MultiAssayExperiment does, but without introducting an additional layer of indirection in that a MultiAssayExperiment typically functions by binding together instances of, for example, TreeSummarizedExperiment and SummarizedExperiment with shared metadata.
 
 
 # Notes from "Software for the integration of multi-omics experiments in Bioconductor"
@@ -41,7 +41,7 @@ Key methods for manipulating a MultiAssayExperiment include:
 
 # Notes from "TreeSummarizedExperiment: a S4 class for data with hierarchical structure"
 
-TreeSummarizedExperiment is an extension of the SingleCellExperiment class, derived from SummarizedExperiment, for storing the hierarchical structure of data together with the biological profile data. Functions for  manipulating data at different resolutions included. For example, microbial taxa are organized as a tree according to their genomic sequence. Thus, TreeSummarizedExperiment can be seen as bridging the functionalities of the phyloseq R package with the SingleCellExperiment container. TreeSummarizedExperiment is flexible in combination with R packages derived from SummarizedExperiment and the phyloseq package.
+TreeSummarizedExperiment is an extension of the SingleCellExperiment class, derived from SummarizedExperiment, and is used for storing the hierarchical structure of data together with the biological profile data. Functions for  manipulating data at different resolutions are included. For example, microbial taxa are organized as a tree according to their genomic sequence. Thus, TreeSummarizedExperiment can be seen as bridging the functionalities of the phyloseq R package with the SingleCellExperiment container. TreeSummarizedExperiment is flexible in combination with R packages derived from SummarizedExperiment and the phyloseq package.
 
 Compared to SingleCellExperiment, TreeSummarizedExperiment has five additional slots:
 - rowTree: the hierarchical structure on the rows of the assays, for example hierarchy of genes or microbial taxa
@@ -52,9 +52,9 @@ Compared to SingleCellExperiment, TreeSummarizedExperiment has five additional s
 
 Note that the rowTree and colTree slots require the tree to be an object of the phylo class from the phyloseq package. Other tree formats can often be converted to a phylo object using the treeio package, for example.
 
-Functions can be broadly divided into those that operate on the TreeSummarizedExperiment object or on the tree objects.
+Functions can be broadly divided into those that operate on the TreeSummarizedExperiment object or on the phylo objects.
 
-In construction of the TreeSummarizedExperiment object, tree data takes precedence when  provided link information (node labels) between the assay data and the tree data, so columns and rows with labels not present among the node labels of the tree are removed.
+In construction of the TreeSummarizedExperiment object, tree data takes precedence when provided link information (node labels) between the assay data and the tree data, so columns and rows with labels not present among the node labels of the tree are removed.
 
 The link data objects are of the LinkDataFrame class and has five columns:
 - nodeLab: the labels on the nodes of the tree
@@ -89,21 +89,21 @@ LC–MS-based metabolomics suffers from systematic intensity drift.
 
 The Bioconductor microbiome data science framework consists of:
 - data containers, designed to organize multi-assay microbiome data
-- R packages that provide dedicated methods for analysing such data
+- R packages that provide dedicated methods for analyzing such data
 - community of users and developers
 
-MultiAssayExperiment binds data structures such as TreeSummarizedExperiment and SummarizedExperiment together so they share metadata. This simplifies data manipulation tasks like subsetting. Connections between samples across differennt experiments are defined through a sampleMap.
+MultiAssayExperiment binds data structures such as TreeSummarizedExperiment and SummarizedExperiment together so they share metadata. This simplifies data manipulation tasks like subsetting. Connections between samples across different experiments are defined through a sampleMap.
 
 Storing multiple data tables in microbiome analysis is preferrably done as follows:
 - Assays are used within the data container for data transformations
 - the altExp slot in TreeSE if for alternative versions of the data with the same number of samples, arising from differing taxonomic agglomeration or alternative profiling technologies, for example
-- MultiAssayExperiment for multo-omic experiments, allowing for differing numbers of samples and features
+- MultiAssayExperiment for multi-omic experiments, allowing for differing numbers of samples and features
 
-Hintikka XO-data was used to study whether prebiotics would reduce the negative impact of a high-fat diet in mice. This encompassed three modalities: microbial abundance data, metabolite concentrations and data about different biomarkers.
+Hintikka XO-data was used to study whether prebiotics would reduce the negative impact of a high-fat diet in mice. This encompassed three modalities: microbial abundance, metabolite abundance and biomarker data.
 
 What steps were performed for the multi-assay analysis?
-- Cross-correlation analysis, for elucidating the relationship between individual species of bacteria and metabolite concentrations. Heatmap visualization.
-- Multi-omics factor analysis, which could be seen as a generalization of PCA, for unsupervised multi-omics integration to latent space. The factor loadings (variance explained per factor and assay) is visualized with bar plots.
+- Cross-correlation analysis, for elucidating the relationship between individual species of bacteria and metabolite concentrations with heatmap visualization.
+- Multi-omics factor analysis, which could be seen as a generalization of PCA, for unsupervised multi-omics integration to latent space. The factor loadings (variance explained per factor and assay) was visualized with bar plots.
 
 In the framework, the following tasks can be performed:
 - Data manipulation including tidying, subsetting, splitting, adding, modifying and merging
