@@ -5,6 +5,8 @@
 # Leo
 
 
+- HintikkaXOdata metaboliitit on mitattu NMR:llä
+- aloitin tutkimussuunitelman kirjoittamisen
 - muodostanut käsityksen data containereista miten ne suhtautuvat toisiinsa
 - oletko lomalla jossain vaiheessa kesää?
 - prioriteettilista työkaluista

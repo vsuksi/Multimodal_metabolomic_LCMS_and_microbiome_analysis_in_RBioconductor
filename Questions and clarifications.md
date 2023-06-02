@@ -4,7 +4,13 @@
 
 **Concepts can take a while to crystallize in a seamless formulation; meanwhile, try to formulate the matter as it often means progress.**
 
+**What are the pros and cons to NMR and LC/MS in metabolomics?**
+NMR does absolute quantification and reproducibility of NMR is very high and average for LC/MS. NMR requires minimal sample preparation in comparison to LC/MS, and doesn't require tissue extraction. Sample analysis time is shorter for NMR, with the entire sample being analyzed in one measurement.
+
+On the other hand, the number of detectable metabolites ranges from 30 to 100 for NMR, with LC/MS coming in at over one thousand. LC/MS is also 10 to 100 times more sensitive, and is better for targeted analysis.
+
 **What is biclustering?**
+
 
 
 **What is experimenthub?**
