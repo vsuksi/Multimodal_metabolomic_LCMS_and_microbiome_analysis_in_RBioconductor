@@ -4,17 +4,26 @@
 
 **Concepts can take a while to crystallize in a seamless formulation; meanwhile, try to formulate the matter as it often means progress.**
 
+
+
+
+**What is ExpressionSet and its significance?**
+ExpressionSet (historical) is generally used for array-based experiments and gene expression data and can only store one count matrix per object. SummarizedExperiment is an extension of the ExpressionSet class include multiple assays of the same dimensions in a single object. eSet is the new ExpressionSet data structure for high-throughput experiments
+
+**What is a virtual class in R?**
+A class for which no actual object can be created; the most common form of which is the class union, a virtual class that includes member classes. Methods that are written with the class union are eligible for use with object from any of the member classes. Virtual classes are also referred to as abstract classes.
+
 **What are the pros and cons to NMR and LC/MS in metabolomics?**
 NMR does absolute quantification and reproducibility of NMR is very high and average for LC/MS. NMR requires minimal sample preparation in comparison to LC/MS, and doesn't require tissue extraction. Sample analysis time is shorter for NMR, with the entire sample being analyzed in one measurement.
 
 On the other hand, the number of detectable metabolites ranges from 30 to 100 for NMR, with LC/MS coming in at over one thousand. LC/MS is also 10 to 100 times more sensitive, and is better for targeted analysis.
 
 **What is biclustering?**
+Given a matrix of values, a biclustering algorithm generates a subset of rows that exhibit similar behavior across a subset of columns, or vice versa.
 
 
-
-**What is experimenthub?**
-
+**What is ExperimentHub?**
+ExperimentHub is a central location for curated data from experiments, publications or training courses. Each resource has associated metadata, tags and date of modification.
 
 
 **What is an operational taxonomic unit (OTU)?**

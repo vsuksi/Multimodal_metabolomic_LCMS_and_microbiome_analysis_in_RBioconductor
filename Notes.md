@@ -1,4 +1,11 @@
 
+
+# Notes on Bioconductor
+https://carpentries-incubator.github.io/bioc-project/03-installing-bioconductor.html
+https://solutions.posit.co/envs-pkgs/bioconductor/
+
+BioConductor delivers releases where a set of packages is published at once and intended for compatibility only with a certain version of R. BioConductor releases twice per year. In April a new Bioconductor release coincides with the annual release of R. Thus, in order to use the latest BioConductor April release, one needs to use the latest version of R. The October release of Bioconductor uses the same version of R, but comes with an updated set of Bioconductor packages.
+
 # Notes on Bioconductor metabolomics packages
 
 
@@ -12,7 +19,7 @@ SingleCellExperiment is based on RangedSummarizedExperiment, a derivative of Sum
 
 Using the SingleCellExperiment class, all data pertaining to an experiment can be stored in a single instance, facilitating the development and usage of complex analysis workflows.
 
-The rest of the publication is rather heavily focused on scRNA-seq data analysis, and does provides scant value for understanding the SingleCellExperiment class.
+The rest of the publication is rather heavily focused on scRNA-seq data analysis, and provides scant value for understanding the SingleCellExperiment class.
 
 Functionalities include:
 1. Adding low-dimensional representations
@@ -90,7 +97,7 @@ LC–MS-based metabolomics suffers from systematic intensity drift.
 The Bioconductor microbiome data science framework consists of:
 - data containers, designed to organize multi-assay microbiome data
 - R packages that provide dedicated methods for analyzing such data
-- community of users and developers
+- community of users and developers()
 
 MultiAssayExperiment binds data structures such as TreeSummarizedExperiment and SummarizedExperiment together so they share metadata. This simplifies data manipulation tasks like subsetting. Connections between samples across different experiments are defined through a sampleMap.
 

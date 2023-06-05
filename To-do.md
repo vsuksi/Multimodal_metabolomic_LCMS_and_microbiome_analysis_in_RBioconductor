@@ -4,11 +4,9 @@
 
 **Enter tasks in a rough order of importance!**
 
-Review your notes
-
 Tinker with Orchestrating Microbiome Analyis, especially:
 - Multi-omics factor analysis
-- 
+-
 
 Tinker with TreeSummarizedExperiment with help from "TreeSummarizedExperiment: a S4 class for data with hierarchical structure".
 

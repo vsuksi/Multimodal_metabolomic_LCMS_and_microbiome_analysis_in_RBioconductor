@@ -2,11 +2,15 @@
 
 **The braindump is a repository for the fleeting thoughts that further the project at hand but are better picked up at a later stage.**
 
-Skip the LC/MS in the title, as Hintikka metabolite data is by NMR?
+Packages of interest that interface with singlecellexperiment: scater, scran, clusterExperiment,  
 
-No mention of LC/MS in Hintikka?
+# Writing paradigm
+- diminishing returns in many tasks; try to do tasks a speed that gives you a sense of things moving forward, mistakes won't feel as mistakey if the effort involved was swift
+- use sentences with ; for variation
+- methods vs tools? Methods in non-technical parts, function in materials & methods
+- object vs instance? Instance
+- data structure vs data container?
 
-How to filter Bioconductor metabolomics packages of interest?
 
 If using the Hintikka XO-data, Notame functionalities for multi-modal metabolomic LC/MS and microbiome analysis are of interest. What are some examples of these?  How far does one need to go in the workflow?
 - The HintikkaXO dataset contains high-throughput profiling data from 40 rat samples, including 39 biomarkers, 38 metabolites (NMR), and 12706 OTUs from 318 species. It is a diet comparison study with High/Low fat diet and xylo-oligosaccaride supplementation.
