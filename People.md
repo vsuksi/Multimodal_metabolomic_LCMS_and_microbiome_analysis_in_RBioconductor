@@ -4,20 +4,6 @@
 
 # Leo
 
-Hei!
-
-Kirjoitin tutkimussuunnitelman johdannon niin kuin että projekti olisi selvillä.
-Lukisitko johdannon arvioidaksesi, olenko oikeillä jäljillä?
-
-Notame käsittelee LC-MS datan käsittelyä, kun taas HintikkaXOdatan metaboliitit on mitattu NMR:llä. Jätänkö LC-MS datan prosesoinnille ominaiset toiminnot rauhaan?
-
-Oletko lomalla jossain vaiheessa kesää?
-
-Muistuttaisin vielä Notame-työkalujen prioriteettilistasta sekä data containerin valitsemisesta.
-
-Kiitti,
-Vilhelm
-
 
 
 # Annika
