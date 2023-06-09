@@ -5,7 +5,8 @@
 **Concepts can take a while to crystallize in a seamless formulation; meanwhile, try to formulate the matter as it often means progress.**
 
 
-
+**What is unit testing?**
+Formal automated testing of functions. An expectation is the atom of testing, a test groups together multiple expectations to test output from a single function and a file groups together multiple related tests.
 
 **What is ExpressionSet and its significance?**
 ExpressionSet (historical) is generally used for array-based experiments and gene expression data and can only store one count matrix per object. SummarizedExperiment is an extension of the ExpressionSet class include multiple assays of the same dimensions in a single object. eSet is the new ExpressionSet data structure for high-throughput experiments

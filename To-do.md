@@ -4,9 +4,14 @@
 
 **Enter tasks in a rough order of importance!**
 
+Check out MS-experiment.
+
+Ideaalisti varmaan sellaisia, joihin jo löytyy vastaavia vaihtoehtoja OMA-tutoriaalin kautta? Saisitko listatuksi Notamesta muutamia sellaisia toimintoja, joita näkisit kiinnostavaksi ja hyödylliseksi lähteä ensin työstämään? Voitaisiin sen pohjalta keskustella sitten tarkemmin.
+
+
 Tinker with Orchestrating Microbiome Analyis, especially:
 - Multi-omics factor analysis
 
 Tinker with TreeSummarizedExperiment with help from "TreeSummarizedExperiment: a S4 class for data with hierarchical structure".
 
-Browse other Bioconductor metabolomics packages
+If there isn't anything to do, get more familiar with R package structure and the S3 and S4 systems by completing the notes on Wickham's R packages book.

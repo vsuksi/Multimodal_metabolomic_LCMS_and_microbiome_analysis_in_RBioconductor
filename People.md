@@ -5,7 +5,6 @@
 # Leo
 
 
-
 # Annika
 
 Räcker det att min forskningsplan godkännas av min huvudsakliga handledare Leo? Jag skickar den även till min ÅA-handledare Guillaume, så hänger han med i projektet.

@@ -1,3 +1,114 @@
+# Notes on multi-omics microbiome work done in R
+
+
+
+
+
+# Notes on writing R packages, inspired by mia
+1. Introduction
+- install.packages(c("devtools", "roxygen2", "testthat", "knitr")) for package development
+- One needs a C compiler and a few command-line tools that can be installed from RStudio
+- Check if you have the needed tools by running has_devel()
+- throughout the book, foo() refers to functions, bar to variables and functions parameters and baz/ to paths
+- output is commented using #> to distinguish them from regular comments
+- a source package is a development version directory on the computer with the package components
+- a bundled package is a package compressed to a single file and have the extension .tar.gz
+- an uncompressed bundled package is similar to a source package but vignettes are built in HTML or PDF instead of Markdown
+- temporary files in a source package are not included in a bundled package
+- any files listed in .Rbuildignore are not included in the bundle.
+- .RBuildignore allows one to have additional directories in the source package that are not included in the bundle, and are specified by devtools:: use_build_ignore("string") to exclude files with the name or content "string"
+- a binary package is a single file for distribution to users who don't have package development tools
+- if a binary package is uncompressed, the resulting structure is different from a source package in that
+  1. there are no .R files in the R/ directory. Instead there are three files that store functions in an efficient, parsed format
+  2. a Meta/ directory contains a number of Rds files for cached metadata about the package, like what topics the help files cover and parsed versions
+of the DESCRIPTION files
+  3. a html/ directory contains files needed for HTML help
+  4. if you had any code in the src/ directory there will now be a libs/ directory that contains the results of compiling 32-bit (i386/) and 64-bit (x64/) code
+  5. the contents of inst/ are moved to the top-level directory
+
+- binary packages are platform-specific
+- use devtools::build(binary = TRUE) to make a
+binary package
+- an installed package is a binary package decompressed to a package library
+- R CMD INSTALL can install a source, bundle or binary package ; devtools::install() is effectively a wrapper for R CMD INSTALL
+- install_github() and install.packages() are used for remote access; install_github() builds the package from a source package
+- The distinction between loading and attaching packages is not important when you’re writing scripts, but it’s very important when you’re writing packages
+- for example, library() for attaching a package is not useful when developing a package because you have to install it first
+- a library is simply a directory of installed packages
+
+2. R code
+- mia separates all functions into separate files
+- use the lintr package to identify style issues
+- use two spaces for indenting code
+- packages used in a .R function file aren't available if referred to in a script if the .R function file hasn't been built yet. In other words, top-level R code in a package is only executed when the package is built, not when it’s loaded.
+- some functions modify global settings which can be problematic, for example:
+  1. don't use library() or require(), instead use the DESCRIPTION file to specify package requirements for package development
+  2. don't use source(), instead rely on devtools::load_all(). Instead of using source() to create a dataset, instead switch to data/
+- other functions must be used with caution:
+  1. if you modify global options() or graphics par(), save the initial values (old <- options(stringsAsFactors = FALSE)) and reset when you're done (on.exit(options(old), add = TRUE))
+  2. avoid modifying the working directory. Save the initial directory (old <- setwd(tempdir())) and reset when you're done (on.exit(setwd(old), add = TRUE))
+  3. Creating plots and printing output to console can affect R settings, prefer to isolate creating plots and printing to functions that only produce output right away
+- avoid relying on the R settings, which can be different to yours; the stringsAsFactors argument in read.csv() can be set to TRUE for you but FALSE for the user
+- sometimes side effects are needed, for example:
+  1. to display an informative message when the package loads (.onAttach <- function(libname, pkgname) {
+packageStartupMessage("Welcome to my package")
+})
+  2. to set custom options for your package with options()
+  3. to connect R to another programming language
+  4. to register vignette engines
+
+3. Package metadata
+- the DESCRIPTION file is in Debian control format (DBF), consisting of a field name, colon and text. Subsequent lines of text are indented with four spaces.
+- use devtools::use_package() to add packages to the DESCRIPTION imports and suggests
+- specify a minimum version of needed packages
+- development should start with version 0.0.0.9000
+
+4. Object documentation
+- advantages of using roxygen2:
+  1. the documentation is easily updated when code is modified
+  2. Roxygen2 dynamically inspects the objects that it documents
+  3. abstracts over the differences in documenting different types of objects, so you need to learn fewer details
+
+- documentation workflow:
+  1. add roxygen comments to .R files
+  2. run devtools::document() to convert roxygen comments to .Rd files
+  3. preview documentation with ?
+  4. rinse and repeat until satisfied
+
+- roxygen uses #' to distinguish from regular comments
+- when using help(), R parses the .Rd file and displays it as a HTML file
+
+2. Package structure
+
+3. R code
+
+4. Package metadata
+
+5. Object documentation
+
+6. Vignettes, long-form documentation
+
+7. Testing
+
+8. Namespace
+
+9. External data
+
+10. Compiled code
+
+11. Installed files
+
+12. Other components
+
+13. Git and Github
+
+14. Automated checking
+
+15. Releasing a package
+
+- vignettes are for big-picture documentation, roxygen2-generated documentation is the nitty gritty documentation
+- the testthat package is used for converting informal interactive tests to formal, automated tests
+- the namespace
 
 
 # Notes on Bioconductor
