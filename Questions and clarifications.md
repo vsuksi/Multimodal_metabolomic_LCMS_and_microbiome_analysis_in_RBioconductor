@@ -4,6 +4,66 @@
 
 **Concepts can take a while to crystallize in a seamless formulation; meanwhile, try to formulate the matter as it often means progress.**
 
+**What are the main takeaways regarding data infrastructure from scouring multi-omics articles?**
+- do they use R? - all of them use R
+- do they use Bioconductor? - none of them use BioConductor
+- what data structure do they use? - no data infrastructure used, only dataframes
+- do the articles use a data container - they don't
+
+
+**What kinds of object can MultiAssayExperiment store?**
+Classes contained in the ExperimentList must support the following list of methods:
+- [:single square bracket subsetting, with a single comma. It is assumed that values before the comma subset rows, and values after the comma subset columns.
+- dimnames() : corresponding to features (such as genes, proteins, etc.) and experimental samples dim(): returns a vector of the number of rows and number of columns
+
+**What packages interface with SingleCellExperiment?**
+scater, scran and clusterExperiment.
+
+**Can an MSexperiment object be converted to a SummarizedExperiment object?**
+eSet to SummarizedExperiment data converter might do it for MSexperiment. MSexperiment is perhaps more similar to MultiAssayExperiment, as a SummarizedExperiment object can be included in the qdata slot.
+
+**Is quantification of interest in the work at hand?**
+Notame doesn't mention quantification.
+
+**Why is there a separate slot for quantification data in the MSexperiment container?**
+Quantification of MS data is complicated; peak areas are not directly reflective of metabolite quantities because of differential ionization efficiencies of the different metabolites within a complex mixture.
+
+**Can SummarizedExperiment can be included in the MSexperiment container?**
+Yes, but only in the qdata slot for quantification data.
+
+**What base and Bioconductor classes work as elements of a MultiAssayExperiment ExperimentList? Will MSexperiment class work in ExperimentList**
+Base::matrix, Base:ExpressionSet, SummarizedExperiment, RangedSummarizedExperiment and RaggedExperiment are known to work as elements of ExperimentList.
+
+**Should I include networks in the workflow?**
+Leo doesn't seem to have done much work on network metabolomics. Then again, Notame includes networks.
+
+**Is MSnbase or MSexperiment best used for the work at hand?**
+MSexperiment, since it builds on MSnbase via Spectra. It is a more abstracted data built based on Biobase eSet.
+
+**MSnbase vs MSexperiment vs Spectra? They have the same authors.**
+- The MsExperiment aims at being very light-weight and flexible to accommodate all possible types of MS experiments (proteomics, metabolomics, …) and all types of MS data representations (chromatographic and spectral data, quantified features etc). In addition, it allows to bundle additional files and data, such as annotations, within the object.
+- The MsExperiment package provides light-weight and flexible containers for MS experiments building on the new MS infrastructure provided by the Spectra package
+- MSnbase is primarily for proteomics MS experiments using isobaric labeling
+- Spectra is an extension of the of in-memory and on-disk data representations from the MSnbase package (that's why it isn't included in the RForMassSpectroMetry initiative package list)
+- Spectra provides a scalable and flexible infrastructure to represent, retrieve and handle mass spectrometry (MS) data.
+- MSnbase -> Spectra -> MsExperiment (to be taken with a grain of salt
+
+
+
+**What does "performing annotation" mean in "A modular and expandable ecosystem for metabolomics data annotation in R"?**
+-  LC-MS instrumentation and analysis conditions can differ substantially among laboratories and experiments, thus resulting in non-standardized datasets demanding customized annotation workflows
+- annotation includes counting elements in chemical formulas, converting element counts to chemical formulas, removing elements from chemical formulas, adding elements to chemical formulas, standardizing formulas according to Hill notation, calculating mass from formulas, converting between masses and m/z values, grouping of isotopologue peaks, matching numerical values accepting differences, calculating a normalized dot product, calculating a normalized Euclidian distance, calculating normalized absolute values distance and calculating normalized spectra angle
+
+**What is the motivation for Notame?**
+- Starting from the acquisition of data to the identification of metabolites, the metabolic profiling workflow involves numerous steps that require expertise in analytical chemistry, biochemistry, bioinformatics and data analysis—click-and-go online tools may therefore not provide
+adequate flexibility.
+- no further motivation is provided, but it is included as a protocol in the Metabolites journal so it is justified to base your metabolomics understanding on it, even if Notame focuses mainly on food and nutritional approaches
+
+**Identification vs annotation of metabolomics data?**
+Identification is a central part of metabolomics data annotation, which includes other tasks.
+
+**What is host trait information in microbiome research?**
+Any information pertaining to the subjects (hosts) biological functioning, for example body mass index; in other words, any information that is not from bacteria.
 
 **What is unit testing?**
 Formal automated testing of functions. An expectation is the atom of testing, a test groups together multiple expectations to test output from a single function and a file groups together multiple related tests.

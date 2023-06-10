@@ -1,4 +1,20 @@
+# Notes for thesis introduction
+- microbiome research as a field at large, including Earth Microbiome Project, NIH Human Microbiome Project (HMP) -> NIH integrative human microbiome project
+- techniques such as shotgun metagenomics
+- When we manipulate complex data, we need a way to abstract it
+- Abstraction, in general, is the process of removing characteristics from something to reduce it to a set of essential elements. To this end, data abstraction creates a simplified representation of the underlying data, while hiding its complexities and associated operations
+- Data abstraction is a programming and design tool that displays basic information about a device while hiding its internal functions
+- an overview of high-profile microbiome research revealed that none used data structures, which necessitating complicated storage of metadata
+- explain why metagenomic microbiome data and MS data need separate containers
+- metabolomics standards initiative
+
+
+# Notes on A Modular and Expandable Ecosystem for Metabolomics Data Annotation in R
+
+
+
 # Notes on multi-omics microbiome work done in R
+
 
 
 

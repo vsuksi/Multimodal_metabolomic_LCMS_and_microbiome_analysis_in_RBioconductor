@@ -4,7 +4,12 @@
 
 **Enter tasks in a rough order of importance!**
 
-Check out MS-experiment.
+Find out if MSexperiment works as an element of ExperimentList.
+
+Make PDF file names more informative in accordance with their use case
+
+Make notes on "A Modular and Expandable Ecosystem for Metabolomics Data
+Annotation in R"
 
 Ideaalisti varmaan sellaisia, joihin jo löytyy vastaavia vaihtoehtoja OMA-tutoriaalin kautta? Saisitko listatuksi Notamesta muutamia sellaisia toimintoja, joita näkisit kiinnostavaksi ja hyödylliseksi lähteä ensin työstämään? Voitaisiin sen pohjalta keskustella sitten tarkemmin.
 
