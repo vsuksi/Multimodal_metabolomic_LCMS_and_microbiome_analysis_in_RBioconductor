@@ -4,6 +4,11 @@
 
 **Concepts can take a while to crystallize in a seamless formulation; meanwhile, try to formulate the matter as it often means progress.**
 
+**What is collision-induced dissociation?**
+A technique for ion fragmentation used in MS/MS
+
+**What does aggregating features in QFeatures mean? Is it a targeted or non-targeted approach?**
+aggregateFeatures in Qfeatures aggregates peptide to spectrum matches (PSMs) into peptides and further into proteins. This is after matching the spectra to peptides from a database in an untargeted workflow. This is not of much use in metabolomics at large, but valuable for proteomics. There is no clustering function.
 
 **What R packages are available for metabolite identification?**
 There are four R packages for metabolite identification; metID, xcms, MAIT and MetaboList 2.
@@ -43,7 +48,7 @@ Classes contained in the ExperimentList must support the following list of metho
 scater, scran and clusterExperiment.
 
 **Can an MSexperiment object be converted to a SummarizedExperiment object?**
-eSet to SummarizedExperiment data converter might do it for MSexperiment. MSexperiment is perhaps more similar to MultiAssayExperiment, as a SummarizedExperiment object can be included in the qdata slot.
+eSet to SummarizedExperiment data converter might do it for MSexperiment. MSexperiment is perhaps more similar to MultiAssayExperiment, as a SummarizedExperiment object can be included in the qdata slot. Based on the latter observation, conversion to SummarizedExperiment seems far-fetched.
 
 **Is quantification of interest in the work at hand?**
 Notame doesn't mention quantification.
@@ -51,17 +56,18 @@ Notame doesn't mention quantification.
 **Why is there a separate slot for quantification data in the MSexperiment container?**
 Quantification of MS data is complicated; peak areas are not directly reflective of metabolite quantities because of differential ionization efficiencies of the different metabolites within a complex mixture.
 
+
 **Can SummarizedExperiment can be included in the MSexperiment container?**
 Yes, but only in the qdata slot for quantification data.
 
 **What base and Bioconductor classes work as elements of a MultiAssayExperiment ExperimentList? Will MSexperiment class work in ExperimentList**
-Base::matrix, Base:ExpressionSet, SummarizedExperiment, RangedSummarizedExperiment and RaggedExperiment are known to work as elements of ExperimentList.
+Base::matrix, Base:ExpressionSet, SummarizedExperiment, RangedSummarizedExperiment and RaggedExperiment are known to work as elements of ExperimentList. MSexperiment might work but probably not as it is more like the MultiAssayExperiment container. MSexperiment is used for storing the whole experiment in the RForMassSpectrometry framework; Spectra and Qfeatures objects are stored in the MSexperiment object are used for the spectra and abundances, respectively.
 
 **Should I include networks in the workflow?**
 Leo doesn't seem to have done much work on network metabolomics. Then again, Notame includes networks.
 
 **Is MSnbase or MSexperiment best used for the work at hand?**
-MSexperiment, since it builds on MSnbase via Spectra. It is a more abstracted data built based on Biobase eSet.
+MSexperiment, since it builds on MSnbase via Spectra. It is a more abstracted data container built based on Biobase eSet.
 
 **MSnbase vs MSexperiment vs Spectra? They have the same authors.**
 - The MsExperiment aims at being very light-weight and flexible to accommodate all possible types of MS experiments (proteomics, metabolomics, …) and all types of MS data representations (chromatographic and spectral data, quantified features etc). In addition, it allows to bundle additional files and data, such as annotations, within the object.

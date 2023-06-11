@@ -4,9 +4,7 @@
 
 **Enter tasks in a rough order of importance!**
 
-First, choose a container. 
-
-Find out if MSexperiment works as an element of ExperimentList.
+Make a list of Notame tools including yay or nay and implementation. Then rank the methods in a priority list.
 
 Make PDF file names more informative in accordance with their use case
 
