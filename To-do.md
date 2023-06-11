@@ -4,6 +4,8 @@
 
 **Enter tasks in a rough order of importance!**
 
+First, choose a container. 
+
 Find out if MSexperiment works as an element of ExperimentList.
 
 Make PDF file names more informative in accordance with their use case
@@ -11,7 +13,9 @@ Make PDF file names more informative in accordance with their use case
 Make notes on "A Modular and Expandable Ecosystem for Metabolomics Data
 Annotation in R"
 
-Ideaalisti varmaan sellaisia, joihin jo löytyy vastaavia vaihtoehtoja OMA-tutoriaalin kautta? Saisitko listatuksi Notamesta muutamia sellaisia toimintoja, joita näkisit kiinnostavaksi ja hyödylliseksi lähteä ensin työstämään? Voitaisiin sen pohjalta keskustella sitten tarkemmin.
+List Notame functionalities that can be done with OMA methods. Perhaps based on a publication by Leo?
+
+Notame on hyvä etenkin metabolomidatan esikäsittelyyn. Mutta ne downstream-analyysit (PCA, tilastolaskut jne) ei ole mitenkään Notame-spesifejä ja voisi olla järkeväkin korvata jollakin muulla. Eli voitaisiin listata menetelmiä joiden osalta ainakin kannattaisi tehdä tällaista. Ideaalisti varmaan sellaisia, joihin jo löytyy vastaavia vaihtoehtoja OMA-tutoriaalin kautta? Saisitko listatuksi Notamesta muutamia sellaisia toimintoja, joita näkisit kiinnostavaksi ja hyödylliseksi lähteä ensin työstämään? Voitaisiin sen pohjalta keskustella sitten tarkemmin.
 
 
 Tinker with Orchestrating Microbiome Analyis, especially:

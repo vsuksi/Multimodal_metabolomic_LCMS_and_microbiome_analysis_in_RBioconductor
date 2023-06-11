@@ -4,6 +4,29 @@
 
 **Concepts can take a while to crystallize in a seamless formulation; meanwhile, try to formulate the matter as it often means progress.**
 
+
+**What R packages are available for metabolite identification?**
+There are four R packages for metabolite identification; metID, xcms, MAIT and MetaboList 2.
+
+**Are metabolic profiling and metabolite identification synonyms?**
+In most use cases, yes, although metabolic profiling refers more to the process itself
+
+**How is QFeatures different from MultiAssayExperiment?**
+
+QFeatures is derived from the MultiAssayExperiment
+The QFeatures class extends the inherits all functionalities.  QFeatures can be conceptualized as an evolving MSnSet (derived from eSet, mimicking ExpressionSet) data towards SummarizedExperiment, but for MS data.
+
+MSnSet objects can be coerced to/from ExpressionSet and SummarizedExperiment objects. In the latter case, the metadata available in the protocolData, experimentData are completely dropped, and only the logging information of the processingData slot is retained. All these metadata can be subsequently be added using the addMSnSetMetadata (see examples below). When converting a SummarizedExperiment to an MSnSet, the respective metadata slots will be populated if available in the SummarizedExperiment metadata.
+
+**Are labeled and targeted synonyms in the context of MS?**
+Not necessarily, labeled can also refer to isobaric labeling for proteins or peptides
+
+**What does mslevel in Spectra refer to?**
+Identification level according to Metabolomics Standards Initiative.
+
+**How is meta-data handled in the multi-omics articles?**
+In a separate table in a list of tables. In short, everything is kept in separate tables and accessed by extensive scripting.
+
 **What are the main takeaways regarding data infrastructure from scouring multi-omics articles?**
 - do they use R? - all of them use R
 - do they use Bioconductor? - none of them use BioConductor
