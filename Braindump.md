@@ -2,43 +2,41 @@
 
 **The braindump is a repository for the fleeting thoughts that further the project at hand but are better picked up at a later stage.**
 
-Use MultiAssayExperiment with Spectra and QFeatures?
-
-**What constitutes the MScontainer?**
-- the sampleData slot for a DataFrame, with each row describing a sample with columns containing all relevant information on that sample
-- files for data or annotations stored in the experimentFiles slot
-- general metadata, such as the commands used to generate the mzid files, is stored in the metadata slot
-- Spectra data in a Spectra object, created from data from the experimentFiles slot, is stored in the spectra slot
-- Quantification data is stored as a QFeatures object or SummarizedExperiment object in the qdata slot
 
 
-**MSexperiment vs MultiAssayExperiment?**
-Chromatographic data is not yet supported by MSexperiment, but is needed for assigning the metabolite identification level.
 
-The central functionality of the QFeatures infrastructure is the aggregation of features (peptides) into higher-level features while retaining the link between the different levels. This is important for proteomics but not central for metabolomics at large.
 
-Argument from generalizability; MultiAssayExperiment is a more general container and can be familiar from other contexts.
+**Does xcms interface with summarizedexperiment?**
+Nope.
 
-Suggest a priority list for Leo with basic information:
-1.
+Skyline could do quality control. Skyline is specifically for proteomics research, tho.
 
-**What are metabolomics identification standards?**
-The identification levels and other reporting criteria for metabolomic data processing and biological context metadata as specified by the Metabolomics Standards Initiative. There is a similar initiative for MS proteomics, for example.
+Prioritize:
+1. packages that interface with SummarizedExperiment
+2. Bioconductor packages
+3. other packages
 
-Quantitative = abundance
-Qualitative = identification
+List of Notame functionalities:
+1. Peak picking (semi-automated, MS-DIAL)
+2. Drift correction and flagging of low-quality features
+3. Quality control
+- there are nice visualizations that ought to be included
 
-Data analysis approaches in metabolomics can broadly be divided into qualitative – analysis of spectral data and quantitative – analysis of individual metabolite concentrations. Notame includes methodology for both. In RForMassSpectrometry, Qfeatures and are used for quantitative and qualitative work, respectively.
-
-In both Notame and Spectra,
-
+4. Imputation, transformation, normalization and scaling
+- mia
+5. Clustering molecular features originating from the same metabolite
+- scater
+6. Feature-wise (univariate) analysis
+7. Multivariate analysis
+8. Ranking and filtering for variable selection
+9. Visualization of molecular features
+10. Visualizations from uni- and multivariate analysis
+11. Identification of metabolites
+12. Pathway analysis
+13. Biological interpretation of the results
 **What criteria can you apply to make a cohesive whole? Perhaps make a an illustration of the decision process for including methods in the process? Perhaps choose a publication to base your choice of methods on? A standard?**
 
 - Is it mentioned in OMA?
-
-The MSexperiment is populated by importing MS data files as a Spectra object and sample annotations as a DataFrame.
-
-A Spectra object consists of msLevel, rtime, m/z and intensity
 
 
 

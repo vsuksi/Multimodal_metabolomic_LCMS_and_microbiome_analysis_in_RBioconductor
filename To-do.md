@@ -4,6 +4,8 @@
 
 **Enter tasks in a rough order of importance!**
 
+Make the thesis document with headers and start piling stuff in there.
+
 Make a list of Notame tools including yay or nay and implementation. Then rank the methods in a priority list.
 
 Make PDF file names more informative in accordance with their use case

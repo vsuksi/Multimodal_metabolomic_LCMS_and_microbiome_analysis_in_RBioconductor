@@ -4,6 +4,59 @@
 
 **Concepts can take a while to crystallize in a seamless formulation; meanwhile, try to formulate the matter as it often means progress.**
 
+**How are missing abundance values handled in LC/MS in general and in Notame?**
+Values missing due to being below an instrument’s LOD are often referred to as “missing not at random”, or MNAR.
+Missing values caused by processing errors are often referred to as “missing completely at random”, or MCAR, because they are uniformly distributed across the dataset and are not missing directly due to any property of the metabolite or measurement itself.
+Notame deals with MNAR and MCAR values by filtering out values that are not detected in > 50% of the samples and > 70% of QC samples. This is a heuristic method that should remove all MCARs but doesn't explicitly deal with the detection threshold and probably removes features that are barely detectable. The starting point for imputation in the Notame workflow thus involves features that are detected in over > 50% of samples, which probably removes features that are at the detection threshold of the instrument. This means that any zero values from below the detection threshold don't impact the imputation.
+
+**Is there support for qualitative and quantitative metabolomics in the RForMassSpectrometry project?**
+Data analysis approaches in metabolomics can broadly be divided into qualitative – analysis of spectral data for identification, and quantitative – analysis of individual metabolite concentrations. Notame includes methodology for both. In RForMassSpectrometry, Qfeatures and Spectra are used for quantitative and qualitative work, respectively.
+
+**Is there support for the MetaboSet class in the RForMassSpectrometry project?**
+There is no mention of MetaboSet in the RForMassSpectrometry project GitHub.
+
+**What are metabolomics identification standards?**
+The identification levels and other reporting criteria for metabolomic data processing and biological context metadata as specified by the Metabolomics Standards Initiative. There is a similar initiative for MS proteomics, for example.
+
+**MSexperiment vs MultiAssayExperiment?**
+Chromatographic data is not yet supported by MSexperiment, but is needed for assigning the metabolite identification level.
+
+The central functionality of the QFeatures infrastructure is the aggregation of features (peptides) into higher-level features while retaining the link between the different levels. This is important for proteomics but not central for metabolomics at large.
+
+There are several packages that interface with SummarizedExperiment that can be used with ease in the MultiAssayExperiment context
+
+SummarizedExperiment derivatives can only be stored in the qdata slot of MSexperiment.
+
+Argument from generalizability; MultiAssayExperiment is a more general container and can be familiar from other contexts.
+
+**Can MultiAssayExperiment be used with Spectra and QFeatures?**
+Probably not, since QFeatures is derived from MultiAssayExperiment and Spectra is built on the MsBackend class.
+
+**In tandem mass spectrometry, is data used from the initial MS1 experiment?**
+In LC-MS/MS-based untargeted metabolomics (or small compound mass spectrometry experiments in general) quantification of the compounds is performed in MS1 while the MS2 data is used for identification of the features.
+
+**Is there a R package for clustering molecular features taking into account the retention time window?**
+Yes, RamClustR. The RAMClustR algorithm is built on creating similarity scores for all pairs of features, submitting this score matrix for heirarchical clustering, and then cutting the resulting dendrogram into neat chunks using the dynamicTreeCut package - where each ‘chunk’ of the dendrogram results in a group of features likely to be derived from a single compound.
+
+**Should batch correction be implemented? What is batch correction in the context of LC-MS?**
+Batch correction ca
+Notame is for single-batch experiments, so batch correction is not included in the workflow, although there is a deprecated .R script for batch correction in the Notame package. Methods include  Removal of Unwanted Variation (RUV) and batchCorr. batchCorr is in a developmental phase but is available through the author Carl Brunius. the hierarchical hRUV approach quantifies variance within and between batches uses these replicates to remove unwanted variation in a hierarchical manner.
+
+**Is there a converter between MetaboSet and TreeSummarizedExperiment?**
+Not directly. Metaboset is an ExpressionSet derivative so makeSummarizedExperimentFromExpressionSet() from the SummarizedExperiment package can be used as a converter template meibi?
+
+**Where does microbiome analysis start in OMA?**
+After processing Illumina-sequenced paired-end fastq files that have been split (or “demultiplexed”) by sample. The resulting amplicon sequence variant (ASV) table is a higher-resolution analogue of the traditional OTU table, which records the number of times each exact amplicon sequence variant was observed in each sample.
+
+**What constitutes the MSexperiment container?**
+- the sampleData slot for a DataFrame, with each row describing a sample with columns containing all relevant information on that sample
+- files for data or annotations stored in the experimentFiles slot
+- general metadata, such as the commands used to generate the mzid files, is stored in the metadata slot
+- Spectra data in a Spectra object, created from data from the experimentFiles slot, is stored in the spectra slot
+- A Spectra object consists of msLevel, rtime, m/z and intensity
+- Quantification data is stored as a QFeatures object or SummarizedExperiment object in the qdata slot
+- any additional data, such as peptide-spectrum matches can be added to the list in the otherData slot
+
 **What is collision-induced dissociation?**
 A technique for ion fragmentation used in MS/MS
 
@@ -17,7 +70,6 @@ There are four R packages for metabolite identification; metID, xcms, MAIT and M
 In most use cases, yes, although metabolic profiling refers more to the process itself
 
 **How is QFeatures different from MultiAssayExperiment?**
-
 QFeatures is derived from the MultiAssayExperiment
 The QFeatures class extends the inherits all functionalities.  QFeatures can be conceptualized as an evolving MSnSet (derived from eSet, mimicking ExpressionSet) data towards SummarizedExperiment, but for MS data.
 
@@ -73,8 +125,9 @@ MSexperiment, since it builds on MSnbase via Spectra. It is a more abstracted da
 - The MsExperiment aims at being very light-weight and flexible to accommodate all possible types of MS experiments (proteomics, metabolomics, …) and all types of MS data representations (chromatographic and spectral data, quantified features etc). In addition, it allows to bundle additional files and data, such as annotations, within the object.
 - The MsExperiment package provides light-weight and flexible containers for MS experiments building on the new MS infrastructure provided by the Spectra package
 - MSnbase is primarily for proteomics MS experiments using isobaric labeling
-- Spectra is an extension of the of in-memory and on-disk data representations from the MSnbase package (that's why it isn't included in the RForMassSpectroMetry initiative package list)
+- Spectra is an extension of the of in-memory and on-disk data representations from the MSnbase package (that's why MSnbase isn't included in the RForMassSpectroMetry initiative package list)
 - Spectra provides a scalable and flexible infrastructure to represent, retrieve and handle mass spectrometry (MS) data.
+- MetaboAnnotation, for less experienced users, builds on the spectra package and provides functions for annotation of LC-MS and LC-MS/MS data.
 - MSnbase -> Spectra -> MsExperiment (to be taken with a grain of salt
 
 
