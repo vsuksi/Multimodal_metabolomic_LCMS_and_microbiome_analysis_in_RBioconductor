@@ -4,6 +4,31 @@
 
 **Concepts can take a while to crystallize in a seamless formulation; meanwhile, try to formulate the matter as it often means progress.**
 
+**Are there R packages for Quality Control?**
+pMartR and protti for proteomics, massqc for metabolomics at large.
+
+**What functionalities are present in Notame vs the only other metabolomics package in R, massqc from tidymass? Which one seems better?**
+* = functionality also in the other package
+
+Notame:
+- Histograms illustrate p-values from linear regression models between each feature and
+injection order
+- Boxplots of feature intensities per sample*
+- density plot for showing distribution of the Euclidean distances between samples
+- scatterplot using t-SNE for estimating drift correction patterns, also drift pattern in the injection order*
+- dendrogram for visualizing hierarchical clustering of the samples
+- RSD of features from drift correction by smoothed cubic spline regression
+- heatmap of the samples (correlation plot)
+
+MassQC:
+- PCA*
+- RSD of features*
+- boxplot for feature intensitites for each sample*
+- QC sample correlation plot* (heatmap)
+
+**Does xcms interface with SummarizedExperiment?**
+Nope.
+
 **How are missing abundance values handled in LC/MS in general and in Notame?**
 Values missing due to being below an instrument’s LOD are often referred to as “missing not at random”, or MNAR.
 Missing values caused by processing errors are often referred to as “missing completely at random”, or MCAR, because they are uniformly distributed across the dataset and are not missing directly due to any property of the metabolite or measurement itself.
@@ -39,7 +64,6 @@ In LC-MS/MS-based untargeted metabolomics (or small compound mass spectrometry e
 Yes, RamClustR. The RAMClustR algorithm is built on creating similarity scores for all pairs of features, submitting this score matrix for heirarchical clustering, and then cutting the resulting dendrogram into neat chunks using the dynamicTreeCut package - where each ‘chunk’ of the dendrogram results in a group of features likely to be derived from a single compound.
 
 **Should batch correction be implemented? What is batch correction in the context of LC-MS?**
-Batch correction ca
 Notame is for single-batch experiments, so batch correction is not included in the workflow, although there is a deprecated .R script for batch correction in the Notame package. Methods include  Removal of Unwanted Variation (RUV) and batchCorr. batchCorr is in a developmental phase but is available through the author Carl Brunius. the hierarchical hRUV approach quantifies variance within and between batches uses these replicates to remove unwanted variation in a hierarchical manner.
 
 **Is there a converter between MetaboSet and TreeSummarizedExperiment?**
@@ -127,7 +151,7 @@ MSexperiment, since it builds on MSnbase via Spectra. It is a more abstracted da
 - MSnbase is primarily for proteomics MS experiments using isobaric labeling
 - Spectra is an extension of the of in-memory and on-disk data representations from the MSnbase package (that's why MSnbase isn't included in the RForMassSpectroMetry initiative package list)
 - Spectra provides a scalable and flexible infrastructure to represent, retrieve and handle mass spectrometry (MS) data.
-- MetaboAnnotation, for less experienced users, builds on the spectra package and provides functions for annotation of LC-MS and LC-MS/MS data.
+- MetaboAnnotation, for less experienced users, builds on the spectra package and provides functions for annotation of LC-MS and LC-MS/MS data. MetaboAnnotation supports SummarizedExperiment
 - MSnbase -> Spectra -> MsExperiment (to be taken with a grain of salt
 
 

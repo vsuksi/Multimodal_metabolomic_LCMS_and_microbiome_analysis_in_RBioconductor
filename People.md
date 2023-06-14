@@ -4,16 +4,12 @@
 
 # Leo
 
-Mainitsit jossain vaiheessa Notame-visualisaatiot.
 
 Sisällytänkö myös Illumina-sekvensointidatan esikäsittelyn projektiin?
 
-Jos tavoitteena on tehdä mahdollisimman suuri osa työstä R:ssä, pitäisikö metaboliittien tunnistaminen myös tehdä koodissa? Pitäisikö siihen sisällyttää optio käyttää in-house tietokantoja? Toisaalta,
+Jos tavoitteena on tehdä mahdollisimman suuri osa työstä R:ssä, pitäisikö metaboliittien tunnistaminen myös tehdä koodissa? Pitäisikö siihen sisällyttää optio käyttää in-house tietokantoja?
 
-Based on Notame, we're more interested in clustering features (including adducts and the like) and then using the engineered features for identification of metabolites. Perhaps this is ok to do manually, since it is at the end of the workflow?
-
-
-- HintikkaXOdata
+- HintikkaXOdata on NMR
 
 
 # Annika

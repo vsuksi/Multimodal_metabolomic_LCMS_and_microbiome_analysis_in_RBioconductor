@@ -6,19 +6,9 @@
 
 Make the thesis document with headers and start piling stuff in there.
 
-Make a list of Notame tools including yay or nay and implementation. Then rank the methods in a priority list.
-
 Make PDF file names more informative in accordance with their use case
 
-Make notes on "A Modular and Expandable Ecosystem for Metabolomics Data
-Annotation in R"
-
-List Notame functionalities that can be done with OMA methods. Perhaps based on a publication by Leo?
-
-Notame on hyvä etenkin metabolomidatan esikäsittelyyn. Mutta ne downstream-analyysit (PCA, tilastolaskut jne) ei ole mitenkään Notame-spesifejä ja voisi olla järkeväkin korvata jollakin muulla. Eli voitaisiin listata menetelmiä joiden osalta ainakin kannattaisi tehdä tällaista. Ideaalisti varmaan sellaisia, joihin jo löytyy vastaavia vaihtoehtoja OMA-tutoriaalin kautta? Saisitko listatuksi Notamesta muutamia sellaisia toimintoja, joita näkisit kiinnostavaksi ja hyödylliseksi lähteä ensin työstämään? Voitaisiin sen pohjalta keskustella sitten tarkemmin.
-
-
-Tinker with Orchestrating Microbiome Analyis, especially:
+Tinker with Orchestrating Microbiome Analysis, especially:
 - Multi-omics factor analysis
 
 Tinker with TreeSummarizedExperiment with help from "TreeSummarizedExperiment: a S4 class for data with hierarchical structure".

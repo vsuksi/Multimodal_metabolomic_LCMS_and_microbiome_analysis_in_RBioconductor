@@ -5,7 +5,6 @@ Leo's comments on the introduction:
 
 - Notame for preprocessing -> converter into TreeSE (or example on how to make the TreeSE or other metabolomics container object from the original Notame data) -> apply Notame methods as applied in OMA or Bioconductor -> multi-modal workflow using MultiAssayExperiment
 
-
 The thesis would consist of:
 1. Using Notame functionalities/workflow in the TreeSE/mysterycontainer context
 2. Integration of metabolomics data to bacterial abundance data with MAE
