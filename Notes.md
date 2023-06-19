@@ -1,3 +1,5 @@
+# Notes on maplet
+
 # Notes for thesis introduction
 - microbiome research as a field at large, including Earth Microbiome Project, NIH Human Microbiome Project (HMP) -> NIH integrative human microbiome project
 - techniques such as shotgun metagenomics
@@ -7,7 +9,6 @@
 - an overview of high-profile microbiome research revealed that none used data structures, which necessitating complicated storage of metadata
 - explain why metagenomic microbiome data and MS data need separate containers
 - metabolomics standards initiative
-
 
 
 # Notes on A Modular and Expandable Ecosystem for Metabolomics Data Annotation in R
