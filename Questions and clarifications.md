@@ -4,6 +4,36 @@
 
 **Concepts can take a while to crystallize in a seamless formulation; meanwhile, try to formulate the matter as it often means progress.**
 
+**To what extent should Notame be used?**
+Only for preprocessing, prioritize convenience of using TreeSummarizedExperiment for the rest of the analysis workflow.
+
+**What functions are generic and which need to be modified?**
+This will become clear as the work progresses chronologically, as visualizations that seem to be generic may turn out to be unimplementable using generic functions.
+
+**Should I prioritize TreeSE support or implement methods into a package that supports TreeSE?**
+Depends on the context, this will become clear as the work progress chronologically.
+
+**How will I be reporting the technical contributions?**
+On a case-by-case basis; if there are contributions to packages, the contributions will be detailed and referred to. Single functions for the workflow at hand will be apparent from the code itself.
+
+**What is the ReScienceC journal?**
+This open-access journal, run by volunteers, targets computational research and encourages the explicit replication of already published research, promoting new and open-source implementations in order to ensure that the original research is reproducible.
+
+**Is it feasible to implement the MS-DIAL steps specified in Notame using XCMS/R?**
+It's not feasible, although the closest method would be to use matchedFilter() for peak detection, adjustRtime_peakGroups for retention time adjustment, groupChromPeaks_density for retention time alignment.
+
+**At what point should the data be to continue with the Notame workflow?**
+Peak areas and chromatogram from peak-picked and aligned data.
+
+**What is mass trace in peak picking?**
+Mass traces are characterized as regions with less than ppm m/z deviation in consecutive scans.
+
+**What is mass accuracy in MS instrumentation?**
+The difference between the measured m/z and the exact m/z ratio of an ion.
+
+**What statistics does maplet do?**
+The maplet documentation describes the methods in a rather unfamiliar way but try to understand the conceptualization if you have down time.
+
 **Are there R packages for Quality Control?**
 pMartR and protti for proteomics, massqc for metabolomics at large.
 
@@ -111,8 +141,7 @@ In a separate table in a list of tables. In short, everything is kept in separat
 **What are the main takeaways regarding data infrastructure from scouring multi-omics articles?**
 - do they use R? - all of them use R
 - do they use Bioconductor? - none of them use BioConductor
-- what data structure do they use? - no data infrastructure used, only dataframes
-- do the articles use a data container - they don't
+- what data structure do they use? - no modern data infrastructure used, only dataframes and extensive scripting
 
 
 **What kinds of object can MultiAssayExperiment store?**

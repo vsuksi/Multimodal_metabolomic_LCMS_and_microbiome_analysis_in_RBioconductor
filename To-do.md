@@ -4,6 +4,8 @@
 
 **Enter tasks in a rough order of importance!**
 
+Write to maplet.
+
 Make the thesis document with headers and start piling stuff in there.
 
 Make PDF file names more informative in accordance with their use case

@@ -1,5 +1,34 @@
 # Notes on maplet
 
+# Notes on the effect and objectives of my thesis
+- execution time can be important in practical applications
+- Reproducibility always starts from some point, and it is hard to argue for the validity of any one such point. Seeds, raw data vs collected data, point-and-click software etc.
+- 
+
+# Limitations of my thesis project
+- batch correction, this is for single-batch LC-MS analysis
+- no raw data, no science
+
+
+
+# Notes on Maternal microbiota-derived metabolic profile in fetal murine intestine, brain and placenta
+- samples of placenta, fetal intestine and brain from germ-free (GF) and specific pathogen-free (SPF) mouse dams
+- 3.5% of the > 4000 molecular features detected in serum are unique for conventional mice and 10% of the shared molecular features had significantly different levels between the groups
+- short chain fatty acids (SCFAs), modified bile acids, trimethylamine N-oxide and 5-aminovaleric acid betaine are important microbial metabolites for the host
+- microbiota also affects levels of intestinal and absorbed nutrients, especially amino acids
+- it's still unclear whether microbes colonize a healthy fetus, but many microbial metabolites essential for development pass through the placenta
+- GF and SPF mice clustered separately in t-SNE dimensionality reduction, especially for the placenta
+- 3680 features differed between GF and SPF mice
+- 2200 features were more abundant in SPF mice in at least one organ, mostly in the intestine
+- 168 features were more abundant in SPF mice in all three organs investigated
+- 1533 features were more abundant in GF mice in at least one organ, most commonly in placenta
+- 88 features were more important in GF mice across all organs
+- 99 features were observed only in SPF mice, most commonly detected in all organs (n=37) or fetal and intestine (n=36)
+- None were detected in only in both fetal organs or brain
+- In contrast, only 6 features were observed exlusively in GF mice
+-
+
+
 # Notes for thesis introduction
 - microbiome research as a field at large, including Earth Microbiome Project, NIH Human Microbiome Project (HMP) -> NIH integrative human microbiome project
 - techniques such as shotgun metagenomics
@@ -11,13 +40,12 @@
 - metabolomics standards initiative
 
 
-# Notes on A Modular and Expandable Ecosystem for Metabolomics Data Annotation in R
-
+# Notes on MSexperiment: A Modular and Expandable Ecosystem for Metabolomics Data Annotation in R
+-
 
 
 # Notes on multi-omics microbiome work done in R
-
-
+- They all utizlize extensive scripting
 
 
 
@@ -137,7 +165,6 @@ BioConductor delivers releases where a set of packages is published at once and 
 
 # Notes on Bioconductor metabolomics packages
 
-
 # Notes on "Orchestrating single-cell analysis with Bioconductor" and SingleCellExperiment documentation
 
 Compared to bulk assays, single-cell data has to be specially handled to achieve biological insight since:
@@ -164,10 +191,10 @@ The SingleCellExperiment container can do most of what MultiAssayExperiment does
 
 SummarizedExperiment is sufficient only to track single assays and metadata. MultiAssayExperiment was developed to address these shortcomings.
 
-MultiAssayExperiment has three main components:
-1. colData, a primary dataset containing patient or cell line-level characteristics (metadata)
-2. ExperimentList, a list of results from complementary experiments
-3. SampleMap, which relates ExperimentList and ColData
+  MultiAssayExperiment has three main components:
+  1. colData, a primary dataset containing patient or cell line-level characteristics (metadata)
+  2. ExperimentList, a list of results from complementary experiments
+  3. SampleMap, which relates ExperimentList and ColData
 
 Key methods for manipulating a MultiAssayExperiment include:
 1. A constructor function and validity check functions that simplify creation of a MultiAssayExperiment
