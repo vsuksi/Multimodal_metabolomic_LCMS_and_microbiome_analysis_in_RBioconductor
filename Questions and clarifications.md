@@ -4,6 +4,8 @@
 
 **Concepts can take a while to crystallize in a seamless formulation; meanwhile, try to formulate the matter as it often means progress.**
 
+
+
 **To what extent should Notame be used?**
 Only for preprocessing, prioritize convenience of using TreeSummarizedExperiment for the rest of the analysis workflow.
 

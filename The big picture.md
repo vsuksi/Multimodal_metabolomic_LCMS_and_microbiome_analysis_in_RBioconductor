@@ -1,7 +1,5 @@
 # The big picture
 
-What functions are generic and which need to be modified?
-
 Leo's comments on the introduction:
 - The focus is not on integrating Notame tools; instead, the focus is on how to use some of the Notame functionalities using modern containers such as TreeSE or MAE, and investigate the pros and cons of using modern containers. These might include code complexity, performance, available methods etc.
 
