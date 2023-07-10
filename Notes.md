@@ -3,7 +3,7 @@
 # Notes on the effect and objectives of my thesis
 - execution time can be important in practical applications
 - Reproducibility always starts from some point, and it is hard to argue for the validity of any one such point. Seeds, raw data vs collected data, point-and-click software etc.
-- 
+- It's more in line with the Bioconductor philosophy to include modular packages that aren't reliant on a specific pipeline like xcms. This is also supported by the very nature of computation; similar approaches are often relevant across modalities, so computational tools are best included in a generic and modular fashion.
 
 # Limitations of my thesis project
 - batch correction, this is for single-batch LC-MS analysis

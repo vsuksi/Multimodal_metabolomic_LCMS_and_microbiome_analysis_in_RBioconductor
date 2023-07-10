@@ -4,8 +4,8 @@
 
 **Can MAI be used to confirm that no values are missing not at random?**
 
-How to know if data is very skewed?
+"All downstream steps are Bioconductor packages compatible with TreeSummarizedExperiment unless noted otherwise"
 
-You need to use features that aren't flagged
+How to know if data is very skewed?
 
 Flagged features are never completely removed in Notame. Perhaps have one tse with all features and one without flagged features?

@@ -4,6 +4,8 @@
 
 **Enter tasks in a rough order of importance!**
 
+Save the steps you lined out for finishing the research plan for later use with thesis
+
 Write to maplet.
 
 Make the thesis document with headers and start piling stuff in there.
